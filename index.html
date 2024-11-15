@@ -27,6 +27,10 @@
         button:hover {
             transform: scale(1.1);
         }
+
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -50,8 +54,10 @@
         btn.addEventListener('click', () => {
             if (!document.fullscreenElement) {
                 document.documentElement.requestFullscreen();
+                btn.classList.add('hidden');
             } else {
                 document.exitFullscreen();
+                btn.classList.remove('hidden');
             }
         });
     </script>
